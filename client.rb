@@ -16,14 +16,27 @@ class Client
       puts "You do not have any portfolios yet."
     else
       combined_value = 0
-      puts "Your portfolios are worth:"
+      puts "Your portfolios are:"
       @portfolios.each { |k,v|
-        puts "#{k}: £#{v.calc_total_value}"
-        combined_value += v.calc_total_value
+        single_portfolio_value = v.calc_total_value
+        puts "#{k}: Current value is £#{single_portfolio_value}"
+        combined_value += single_portfolio_value
       }
-      puts "\nYour portfolios have a combined value of £#{combined_value}."
+      puts "\nYour portfolios have a combined current value of £#{combined_value}.\n\n"
     end
+  end
 
+  def combined_portfolio_value
+    if @portfolios.empty?
+      return 0
+    else
+      combined_value = 0
+      @portfolios.each { |k,v|
+        single_portfolio_value = v.calc_total_value
+        combined_value += single_portfolio_value
+      }
+      return combined_value
+    end
   end
 
   def create_portfolio(name)

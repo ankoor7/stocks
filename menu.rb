@@ -1,5 +1,5 @@
 def main_menu
-  puts "Are you,.\n 1) a client \n 2) the bank manager"
+  puts "Are you,.\n 1) a client \n 2) the bank manager\n\n"
   gets.chomp.to_i
   # manager menu
 end
@@ -22,14 +22,14 @@ def authenticate
 end
 
 def client_menu(client_list, client_number)
-  puts "Hello, #{client_list[client_number].name}. How may we help you? \n 1) List your portfolios \n 2) List the stock in a portfolio \n 3) List the stocks in all your portfolios \n 4) Display your cash funds \n 4) Buy some stocks \n 5) Sell some stocks  \n 6) Lookup a stock price \n\n q) Exit\n\n"
+  puts "Hello, #{client_list[client_number].name}. How may we help you? \n 1) List your portfolios \n 2) List the stock in a portfolio \n 3) List the stocks in all your portfolios \n 4) Display your cash funds \n 5) Buy some stocks \n 6) Sell some stocks  \n 7) Lookup a stock price  \n 8) Make a cash deposit\n\n q) Exit\n\n"
   gets.chomp
 
 
 end
 
 def manager_menu
-  puts "Hello, what do you want to do?\n a) List all your clients \n\n q) Exit\n\n"
+  puts "What do you want to do?\n a) List all your clients \n\n q) Exit\n\n"
   gets.chomp.downcase
 
 end
