@@ -10,8 +10,12 @@ class Portfolio
   end
 
   def add_stock(stock_code,number)
-    @stocks[stock_code] = Stock.new(stock_code,number)
-    @total_value = calc_total_value
+    if @stocks.has_key?(stock_code)
+      @stocks[stock_code].append_stocks(number)
+    else
+      @stocks[stock_code] = Stock.new(stock_code,number)
+      @total_value = calc_total_value
+    end
   end
 
   def calc_total_value

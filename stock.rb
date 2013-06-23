@@ -17,6 +17,8 @@ class Stock
       calc_current_stock_value * @number_of_stocks
   end
 
-
+  def append_stocks(number)
+    @number_of_stocks = number
+  end
 
 end
