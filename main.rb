@@ -160,9 +160,9 @@ while choice != 'q'
   end
 
   case user_type
-    when  1
+    when  '1'
       choice = client_menu(clients, client_number)
-    when  2
+    when  '2'
       choice = manager_menu
     when 'q'
       choice = 'q'
