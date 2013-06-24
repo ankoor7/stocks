@@ -41,19 +41,22 @@ clients['00069'].create_portfolio('test2')
 clients['00069'].portfolios['test2'].add_stock('AAPL',20)
 clients['00069'].portfolios['test2'].add_stock('AMZN',20)
 
-puts`clear`
+#puts`clear`
 puts"Euro Bank plc. \n here to take your money.\n\n"
 
 
 user_type = main_menu
 
 case user_type
-when  1
+when  '1'
   client_number = client_login
   choice = client_menu(clients, client_number)
-when 2
+when '2'
   manager_login
   choice = manager_menu
+when 'q'
+  choice = 'q'
+  binding.pry
 end
 
 while choice != 'q'
@@ -142,14 +145,28 @@ while choice != 'q'
       puts "#{v.name} has £#{v.cash} cash and £#{v.combined_portfolio_value} in stocks"
     }
     puts "\n"
+  when 'b'
+    puts "What is the clients name?"
+    name = gets.chomp
+    puts "What is their gender? Male or female?"
+    sex = gets.chomp.downcase
+    What age are they?
+    age = gets.chomp.to_i
+    puts "How much cash are they depositing?"
+    cash = gets.chomp
+    account_number = "%05d" % (account_number.to_i +1)
+    clients[account_number]  = Client.new(name, sex, age, cash)
+    puts "\n"
   end
 
   case user_type
-  when  1
-    choice = client_menu(clients, client_number)
-  when  2
-    choice = manager_menu
-  end
+    when  1
+      choice = client_menu(clients, client_number)
+    when  2
+      choice = manager_menu
+    when 'q'
+      choice = 'q'
+    end
 
 end
 

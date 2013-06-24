@@ -1,12 +1,12 @@
 def main_menu
-  puts "Are you,.\n 1) a client \n 2) the bank manager\n\n"
-  gets.chomp.to_i
+  puts "Are you,.\n 1) a client \n 2) the bank manager \n q) Exit\n\n"
+  gets.chomp
   # manager menu
 end
 
 def client_login
   # client menu
-  puts "Please enter your account number to login:"
+  puts "Please enter your account number to login: (Hint for WDI team -- type 00069"
   client_number  = gets.chomp.to_s
   authenticate
   return client_number
@@ -29,7 +29,7 @@ def client_menu(client_list, client_number)
 end
 
 def manager_menu
-  puts "What do you want to do?\n a) List all your clients \n\n q) Exit\n\n"
+  puts "What do you want to do?\n a) List all your clients \n b) add a client\n\n q) Exit\n\n"
   gets.chomp.downcase
 
 end
